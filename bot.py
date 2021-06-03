@@ -79,6 +79,10 @@ while not isComplete:
         for btn in checkoutBtns:
             btn.click()
 
+        gotoCartBtn = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".go-to-cart-button"))
+        )
+
         print("Clicked checkout button.")
 
         # fill in card cvv if needed
